@@ -24,5 +24,23 @@ print(sum(f.elements))
 
 s = GenericsList[str](["1", "2", "3", 4])
 print(s.elements)
+----------------------------------------------------------------------
+
+class Converter[T]:
+    def __init__(self):
+        self.__orig_class__ = None
+
+    def convert(self, input_text: str) -> T:
+        generic_tyoe = self.__orig_class__.__args__[0]
+        if input_text:
+            return generic_tyoe(input_text)
+        else:
+            return generic_tyoe()
+
+
+print(Converter[int]().convert("4"))
+print(Converter[int]().convert(""))
+print(Converter[float]().convert("2.3"))
+print(Converter[float]().convert(""))
 
 
