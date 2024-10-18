@@ -22,7 +22,7 @@ print(sum(i.elements))
 f = GenericsList[float]([1.5, 2.5, 2.5, 3.5])
 print(sum(f.elements))
 
-s = GenericsList[str](["1", "2", "3", 4])
+s = GenericsList[str](["1", "2", "3", "4"])
 print(s.elements)
 ----------------------------------------------------------------------
 
