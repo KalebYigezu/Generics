@@ -31,11 +31,11 @@ class Converter[T]:
         self.__orig_class__ = None
 
     def convert(self, input_text: str) -> T:
-        generic_tyoe = self.__orig_class__.__args__[0]
+        generic_type = self.__orig_class__.__args__[0]
         if input_text:
-            return generic_tyoe(input_text)
+            return generic_type(input_text)
         else:
-            return generic_tyoe()
+            return generic_type()
 
 
 print(Converter[int]().convert("4"))
